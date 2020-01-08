@@ -1,2 +1,1 @@
-bot: ruby bot.rb
-youtubedl: python youtube-dl.dms
+bot: chmod a+rx /app/youtube-dl.dms && ruby bot.rb
