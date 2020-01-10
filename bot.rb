@@ -6,7 +6,7 @@ Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     begin
 	    case message.text
-	  	when /youtube/
+	  	when /youtu/
 	  		%x(/app/youtube-dl.dms -x --audio-format mp3 --output "/tmp/audio.%(ext)s" #{message.text})
 			bot.api.send_audio(chat_id: 64819429, audio: Faraday::UploadIO.new('/tmp/audio.mp3', 'audio/mp3'))
 		when //
