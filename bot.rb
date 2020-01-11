@@ -13,6 +13,8 @@ Telegram::Bot::Client.run(token) do |bot|
 			when //
 				bot.api.send_message(chat_id: message.chat.id, text: message.text)
 		    end
+		else
+		end	 	
 	 rescue
 	 	bot.api.send_message(chat_id: message.chat.id, text: "Sorry, #{message.from.first_name}, it's error")
 	 end
