@@ -14,11 +14,11 @@ Telegram::Bot::Client.run(token) do |bot|
 				bot.api.send_message(chat_id: message.chat.id, text: message.text)
 		    end 	
 	 rescue
-	 	bot.api.send_message(chat_id: message.chat.id, text: "Sorry, #{message.from.first_name}, it's error")
+	 	bot.api.send_message(chat_id: message.chat.id, text: "Error")
 	 end
   end
 end
 
 def entry_ban
-	bot.api.send_message(chat_id: message.chat.id, text: "Извини, , у тебя нет доступа")
+	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
 end
