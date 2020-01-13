@@ -2,6 +2,11 @@ require 'telegram/bot'
 
 token = '907693429:AAGwtga9dT_2AIj2Km8RrT4OffypCLeZPGI'
 
+def entry_ban
+	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
+end
+
+
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     begin
@@ -19,6 +24,4 @@ Telegram::Bot::Client.run(token) do |bot|
   end
 end
 
-def entry_ban
-	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
-end
+
