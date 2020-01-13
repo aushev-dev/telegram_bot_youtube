@@ -2,15 +2,17 @@ require 'telegram/bot'
 
 token = '907693429:AAGwtga9dT_2AIj2Km8RrT4OffypCLeZPGI'
 
-def entry_ban
-	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
-end
 
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
+
+  	def ban
+	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
+	end
+
     begin
-    	return entry_ban unless message.chat.id == 64819429 
+    	return ban unless message.chat.id == 64819429 
 		    case message.text
 		  	when /youtu/
 		  		%x(/app/youtube-dl.dms -x --audio-format mp3 --output "/tmp/audio.%(ext)s" #{message.text})
