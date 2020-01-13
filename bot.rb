@@ -12,7 +12,7 @@ Telegram::Bot::Client.run(token) do |bot|
 	end
 
     begin
-    	return bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа") unless message.chat.id == 64819429 
+    	return "у тебя нет доступа" unless message.chat.id == 64819429 
 		    case message.text
 		  	when /youtu/
 		  		%x(/app/youtube-dl.dms -x --audio-format mp3 --output "/tmp/audio.%(ext)s" #{message.text})
