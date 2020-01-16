@@ -24,7 +24,7 @@ Telegram::Bot::Client.run(token) do |bot|
 	 	bot.api.send_message(chat_id: message.chat.id, text: "Error")
 	 else
 	 	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
-
+	 end
 	 end
   end
 end
