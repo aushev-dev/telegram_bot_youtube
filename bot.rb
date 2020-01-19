@@ -7,11 +7,12 @@ token = '907693429:AAGwtga9dT_2AIj2Km8RrT4OffypCLeZPGI'
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
 
+  	def ban bann
+	bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
+	end
+
     begin
-    	unless message.chat.id == 64819429 
-    			bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
-    			break
-    	end
+    	return ban(bann) unless message.chat.id == 64819429 
 		    case message.text
 			  	when /youtu/
 			  		%x(/app/youtube-dl.dms -x --audio-format mp3 --output "/tmp/audio.%(ext)s" #{message.text})
