@@ -10,7 +10,7 @@ Telegram::Bot::Client.run(token) do |bot|
     begin
     	unless message.chat.id == 64819429 
     			bot.api.send_message(chat_id: message.chat.id, text: "Извини, #{message.from.first_name}, у тебя нет доступа")
-    			return
+    			break
     	end
 		    case message.text
 			  	when /youtu/
