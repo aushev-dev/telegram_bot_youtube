@@ -12,7 +12,7 @@ Telegram::Bot::Client.run(token) do |bot|
 	end
 
     begin
-    	returnm ban(bann) unless message.chat.id == 64819429 
+    	return ban(bann) unless message.chat.id == 64819429 
 		    case message.text
 		  	when /youtu/
 		  		%x(/app/youtube-dl.dms -x --audio-format mp3 --audio-quality 8 --output "/tmp/audio.%(ext)s" #{message.text})
