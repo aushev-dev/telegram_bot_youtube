@@ -7,7 +7,7 @@ token = '907693429:AAGwtga9dT_2AIj2Km8RrT4OffypCLeZPGI'
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
 		begin
-			if message.chat.id == 64819429 
+			if message.chat.id == 64819429 ||  message.chat.id == 608598294
 				case message.text
 				when /youtu/
 					%x(/app/youtube-dl.dms -x --audio-format mp3 --audio-quality 8 --output "/tmp/audio.%(ext)s" #{message.text})
