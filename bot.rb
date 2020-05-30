@@ -1,6 +1,6 @@
 require 'telegram/bot'
 
-token = '907693429:AAGwtga9dT_2AIj2Km8RrT4OffypCLeZPGI'
+token = ENV[TOKEN]
 
 
 
