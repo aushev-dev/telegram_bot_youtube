@@ -1,12 +1,12 @@
 require 'telegram/bot'
 
 token = ENV['TOKEN']
-white_list = ENV['WL'].split(',')
+user_list = ENV['WL'].split(',')
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
 		begin
-			if message.chat.id == 64819429 ||  message.chat.id == 608598294 || message.chat.id == 1145075672
+			if user_list.include?(message.chat.id.to_s)
 				case message.text
 				when /youtu/
 					%x(/app/youtube-dl.dms -x --audio-format mp3 --audio-quality 8 --output "/tmp/audio.%(ext)s" #{message.text})
