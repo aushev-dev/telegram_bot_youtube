@@ -2,7 +2,7 @@ require 'telegram/bot'
 
 token = ENV['TOKEN']
 white_list = ENV['WL'].split(',')
-
+puts white_list
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
