@@ -15,8 +15,8 @@ Telegram::Bot::Client.run(token) do |bot|
 					bot.api.send_message(chat_id: message.chat.id, text: message.text)
 				end
 			end
-		rescue
-			bot.api.send_message(chat_id: message.chat.id, text: "Error")
+		rescue StandardError => e
+			bot.api.send_message(chat_id: message.chat.id, text: "#{e.inspect}")
 		end
 	end
 end
